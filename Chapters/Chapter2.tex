@@ -1,0 +1,189 @@
+\section{The proof by Okuyama and Stawiska}\label{inicio}
+
+Let $f$ be a rational function on $\C$ of degree $d\geq 2$. Suppose that $\infty \in F(f)$ and let $D_\infty$ be the Fatou component that contains infinity. In this chapter we will explain a theorem by Okuyama and Stawiska \cite{okuyama} which states that if $D_\infty$ is forward invariant and $\mu_f = \nu$ then the rational function $f$ is actually a polynomial. We will sketch the principal ideas of the proof first and then we will complete the details in subsequent sections.\\
+
+The reader is recommended to consult Appendix \ref{p1} for details concerning the existence of lifts for rational maps on the projective plane $\mathbb{P}^1$. If $F:\mathbb{C}^2 \rightarrow \mathbb{C}^2$ is a lift for $f$, then $F=(F_0,F_1)$ where $F_0,F_1$ are homogeneous polynomials of degree $d$ in two complex variables. Following the notation in \cite{okuyama}, we define $d_0 \coloneqq \deg F_0(1,z)$ and $d_1 \coloneqq \deg F_1(1,z)$. Notice that $f(z) = F_1(1,z)/F_0(1,z)$. Now, the theorem we want to prove is the following.\\
+
+\begin{mytheo}{}{rationalispolyno}
+Let $f$ be a rational function on $\mathbb{P}^1$ of degree $d\geq 2$ such that $\infty\in F(f)$ and the component $D_\infty$ which contains $\infty$ is forward invariant. If $\mu_f=\nu$, where $\nu$ is the equilibrium measure for $J(f)$, then $f$ is a polynomial.
+\end{mytheo}
+
+Let us state the following proposition which will be proven later (see Proposition \ref{pr:propo_equality}).
+
+\begin{myprop}{}{propobeginnin}
+Let $f$ and $D_\infty$ be given as in Theorem \ref{th:rationalispolyno} and let $F = (F_0,F_1)$ be a lift of $f$. Then the map $z\mapsto |F_0(1,z)|$ is constant on $\mathbb{C}\setminus f^{-1}(D_\infty)$.
+\end{myprop}
+
+The previous proposition is enough to settle Theorem \ref{th:rationalispolyno} when there exists a connected component $U$ of $F(f)$ sucht that $f(U) \cap D_\infty = \emptyset$. Recall from Proposition   Such behavior is present, for instance, in the dynamics of the Blaschke products presented in Example \ref{ex:ejemploblashky}.
+
+\begin{mylema}{}{lemmma01}
+Let $f$ and $D_\infty$ be given as in Theorem \ref{th:rationalispolyno} and let $F = (F_0,F_1)$ be a lift of $f$. If there exists a component $U\subset F(f)$ such that $f(U)\cap D_\infty=\emptyset$, then $f$ is a polynomial.
+\end{mylema}
+\begin{proof}
+If $U$ is as in the hypothesis, $|F_0(1,z)|$ would be constant on $\overline{U}$ by Proposition \ref{pr:propobeginnin} and because $\partial U \subset J(f) \subset \mathbb{C}\setminus f^{-1}(D_\infty)$. By the Maximum Modulus Principle, we can say that $F_0(1,z)$ is actually constant on $\overline{U}$, hence in all $\mathbb{C}$ by the Identity Principle. We deduce that $f(z) = F_1(1,z)/F_0(1,z)$ is a polynomial.\\
+\end{proof}
+
+Hence, it remains to suppose that $F(f) = f^{-1}(D_\infty)$, that is, every component of $F(f)$ is mapped onto $D_\infty$ under $f$. We will conclude that $f$ is actually a polynomial, so there is not a rational function which satisfies the hypotheses of Theorem \ref{th:rationalispolyno} altogether with the present assumption. However, to exemplify this dynamical behavior, the reader may consider the map $f(z) = z^2+i$ examined in Example \ref{ex:ejemplo_dendrita}. Notice that by forward invariance of the Fatou set we have $F(f)=f(F(f))=f(f^{-1}(D_\infty))=D_\infty$. The next proposition, which shall also be proven later, will be very useful to conclude the proof (see Proposition \ref{pr:propox}).\\
+
+\begin{myprop}{}{propobeginning2}
+Let $f$ and $D_\infty$ be given as in Theorem \ref{th:rationalispolyno} and let $F = (F_0,F_1)$ be a lift for $f$. If $F(f) = D_\infty$ we have 
+\begin{enumerate}
+\item For some $c>0$, the Julia set $J(f)$ is contained in the level set $L\coloneqq \{z\in \mathbb{C}\,:\, |F_0(1,z)| = c\}$.\\
+\item If some component $l\subset L$ has non-empty intersection with $J(f)$ then $l\subset J(f)$.
+\end{enumerate}
+\end{myprop}
+
+\begin{proof}[Proof of Theorem \ref{th:rationalispolyno}]
+If $f$ is not a polynomial, by Lemma \ref{lm:lemmma01} it is necessary that $F(f) = f^{-1}(D_\infty)$ and so $F(f) = D_\infty$.
+Then, let $L$ be as in Proposition \ref{pr:propobeginning2} and $l\subset L$ be one of its components which intersects $J(f)$. We will see that $l$ is a (possibly non-simple) closed curve in $\mathbb{C}$ (see Section \ref{continuax}), hence there exists a bounded component $U$ of $\mathbb{C}\setminus l$.\\
+
+By assumption, $F_0(1,z)$ is not constant. Since $\partial U \subset l \subset J(f) \subset L$, the Maximum Modulus Principle implies that $|F_0(1,z)|<c$ for $z\in U$, which in turn implies that $U\cap J(f)=\emptyset$, for $J(f)\subset L$. Then $U\subset F(f) = D_\infty$, which is a contradiction, because $U$ was supposed to be bounded. We conclude that $F_0(1,z)$ must be constant and so $f(z)$ is a polynomial, completing the proof.\\
+\end{proof}
+
+We now proceed to provide the proofs of Propositions \ref{pr:propobeginnin} and \ref{pr:propobeginning2}. In the process we will be able to give more details to the statements. We begin by working on some technical lemmas.
+
+\begin{myrmk}{}{}
+Originally, in \cite{okuyama} Theorem \ref{th:rationalispolyno} was proven with a somewhat sontronger hypothesis. They assume that $f(D_\infty)=D_\infty$. However, Proposition readily implies that if $f(D_\infty)\subset D_\infty$, then $f(D_\infty)=D_\infty$.
+\end{myrmk}{}{}
+
+\section{Preliminary lemmas}\label{preleminary_lemmas}
+
+We remark that throughout this section $f:\mathbb{P}^1 \rightarrow \mathbb{P}^1$ is rational function of degree $d\geq 2$ such that $\infty \in D_\infty$ and $f(D_\infty) = D_\infty$, see Theorem \ref{th:rationalispolyno}. It is important for the reader to know that we will not state the previous hypothesis explicitly in the following results, but we are assuming these hypothesis throughout.\\
+
+Let $F=(F_0,F_1)$ be a lift of $f$. Let us start with a lemma which gives an important relation between the logarithmic potential $p_{\mu_f}$ and the Green function $G^F$ associated to $F$, see Section \ref{sec:secciongreen}. This relation is so useful, that we will make use of it in the following chapters.\\
+
+\begin{mylema}{}{pre_lema1}
+For every $z\in \mathbb{C}$,
+\begin{equation}\label{relation_potential}
+p_{\mu_f}(z) = G^F(1,z)-G^F(0,1),
+\end{equation}
+so it follows that $p_{\mu_f}$ is continuous on $\mathbb{C}$.
+\end{mylema}
+
+\begin{proof}
+Notice that $\mu_f(D_\infty)=0$ because $\supp(\mu_f) \subset J(f)$. Using Equation \eqref{potential_equation} we get that for any $z\in \mathbb{C}$
+\begin{align*}
+p_{\mu_f}(z) &= U_{F,\mu_f} + G^F(1,z) + \int_{\mathbb{C}}G^F(1,w) \,d\mu_f(w)\\
+&= G^F(1,z)+C_F,
+\end{align*}
+where $C_F \coloneqq V_F + \int_{\mathbb{C}}G^F(1,w) \,d\mu_f(w)$ is constant because $U_{F,\mu_f} \equiv V_F$ (see Equation \ref{Vdemarco}). Then we obtain
+\begin{align*}
+0 &= \lim_{z\rightarrow \infty} p_{\mu_f}(z)-\log|z|\\
+  &= \lim_{z\rightarrow \infty} (G(z(1/z,1))+C_F) - \log|z|\\
+ &= \lim_{z\rightarrow \infty} G(1/z,1)+C_F \qquad \text{ by Equation \eqref{equgreen01}}\\
+ &= G(0,1)+C_F,
+\end{align*}
+therefore $C_F=-G(0,1)$. Finally, $G^F(1,\cdot)$ is continuous by Theorem \ref{th:existence_green}.\\
+\end{proof}
+
+The next lemma gives an explicit formula for the energy $I_{\mu_f}$ in terms of $G^F(0,1)$ and the coefficients of $F$, more explicitly we use the resultant of two polynomials and a related function $\text{Res}\, F$, see Appendix \ref{appendixresultant} for definitions.\\
+
+\begin{mylema}{}{pre_lema2}
+The sets $\mathbb{C} \setminus D_\infty$ and $J(f)$ are non-polar. The energy $I_{\mu_f}$ of the measure of maximal entropy $\mu_f$ is computed as 
+$$e^{I_{\mu_f}} = e^{-2G^F(0,1)} \,|\text{Res}\, F|^{\frac{1}{d(d-1)}}>-\infty.$$
+In particular, the Julia set $J(p)$ of every polynomial $p$ of degree $d\geq 2$ is non-polar.
+\end{mylema}
+
+\begin{proof}
+Integrating Equation \eqref{relation_potential} in $d\mu_f(z)$, we get
+\begin{equation}\label{lema2equ1}
+I_{\mu_f} = \int_{\mathbb{C}} p_{\mu_f} \,d\mu_f = \int_{\mathbb{C}} G^{F}(1,z)\,d\mu_f(z) - G^F(0,1)>-\infty,
+\end{equation}
+the right hand side is finite because $G^F(0,1)\in \mathbb{R}$ while $G^F(1,\cdot)$ is continuous and $\supp(\mu_f) = J(f)$ which is compact. Since $I_{\mu_f}>-\infty$ and $J(f)\subset \mathbb{C}\setminus D_\infty$ we obtain that $J(f)$ and $\mathbb{C}\setminus D_\infty$ are non-polar.\\
+
+Now, in the proof of Lemma \ref{lm:pre_lema1} it was obtained that
+$$\int_{\mathbb{C}}\G(1,z)\,d\mu_f(z)+V_F = -\G (0,1),$$
+but from Equation \eqref{Vdemarco} we have $V_F = -\frac{1}{d(d-1)} \log |\text{Res} F|$, so if we substitute the previous information into Equation \eqref{lema2equ1} it would follow
+$$I_{\mu_f} = (-V_F-\G(0,1)) - \G(0,1) = \frac{1}{d(d-1)} \log |\text{Res} F| - 2\G(0,1),$$
+the desired equality is obtained by taking exponentials in both sides.
+\end{proof}
+
+
+\begin{mylema}{}{pre_lema3}
+For every $z\in \mathbb{C} \setminus f^{-1}(\infty)$,
+$$p_{\mu_f}(f(z)) = d\cdot p_{\mu_f}(z) - \log |F_0(1,z)| +(d-1)\G(0,1).$$
+\end{mylema}
+
+\begin{proof}
+Take $z\in \mathbb{C}\setminus f^{-1}(\infty)$, since $\frac{F_1(1,z)}{F_0(1,z)}=f(z)\neq \infty$ then $F_0(1,z) \neq 0$ and so
+\begin{align*}
+G^F(F(1,z)) &= \G(F_0(1,z),F_1(1,z))\\
+&= G^F\left(F_0(1,z) (1,\frac{F_1(1,z)}{F_0(1,z)})\right)\\
+&= \G(1,f(z))+\log|F_0(1,z)|.
+\end{align*}
+
+Then using identities \eqref{equation_green} and \eqref{equgreen01} we obtain
+\begin{align*}
+\G(1,f(z)) &= \G(F(1,z))-\log|F_0(1,z)|\\
+&= d\G(1,z)-\log|F_0(1,z)|\\
+&= d(p_{\mu_f}(z)-\G(0,1))-\log|F_0(1,z)|,
+\end{align*}
+where we have used Lemma \ref{lm:pre_lema1} for the last equality. This results in
+$$p_{\mu_f}(f(z)) = \G(1,f(z))-\G(0,1) = dp_{\mu_f}(z)-\log|F_0(1,z)|-(d-1)G(0,1).$$
+\end{proof}
+
+\section{Continuation of the proof}\label{continuax}
+
+Given the lemmas provided in the preceding section we are ready to fill in the details to the argument presented in Section \ref{inicio}.\\
+
+The fact $\mu_f = \nu$ implies $p_{\mu_f} = p_\nu$ and both potentials are continuous by Lemma \ref{lm:pre_lema1}. From Theorem \ref{th:frostman} we obtain $p_\nu = I_\nu$ on $\mathbb{C}\setminus D_\infty$ except for a polar subset, but continuity implies that
+\begin{equation}\label{firstimp01}
+p_{\mu_f} = p_\nu \equiv I_\nu = I_{\mu_f} \quad \text{on }\mathbb{C}\setminus D_\infty.
+\end{equation}
+
+Now we can prove a refined version of Proposition \ref{pr:propobeginnin}.
+
+\begin{myprop}{}{propo_equality}
+On $\mathbb{C}\setminus f^{-1}(D_\infty)$ we have
+$$|F_0(1,\cdot)|  \equiv e^{(d-1)(I_{\mu_f} + G^F(0,1))}.$$
+\end{myprop}
+
+\begin{proof}
+Since $D_\infty$ is forward invariant $D_\infty \subset f^{-1}(D_\infty)$ and so $\mathbb{C} \setminus f^{-1}(D_\infty) \subset \mathbb{C} \setminus D_\infty$. Equation \eqref{firstimp01} then implies
+$$p_{\mu_f} \circ f = p_{\nu} \circ f \equiv I_\nu =I_{\mu_f} \quad \text{ on } \mathbb{C}\setminus f^{-1}(D_\infty),$$
+if we now use the identity given in Lemma \ref{lm:pre_lema3} to express $p_{\mu_f}\circ f$ we would get
+$$I_{\mu_f} \equiv d p_{\mu_f}(z) - \log|F_0(1,z)| + (d-1)G^F(0,1),$$
+clearing $\log|F_0(1,z)|$ and taking exponentials yields the result.
+\end{proof}
+
+Lemma \ref{pr:propo_equality} implies that if $F(f) = D_\infty$ then 
+$$J(f) \subset L \coloneqq \{z\in \mathbb{C} \,:\, |F_0(1,z)| =  e^{(d-1)(I_{\mu_f} + G^F(0,1))} \},$$
+
+which certainly can be seen as the first part of Proposition \ref{pr:propobeginning2}. Before giving the rest of the proof we enlist a few properties of $L$:
+
+\begin{enumerate}
+\item If we write $g(z)$ for $F_0(1,z)$ and $h(z)$ for $|z|$, then by identifying $\mathbb{C}$ with $\mathbb{R}^2$ we can think of $h\circ g$ as a function from $\mathbb{R}^2$ to $\mathbb{R}_+$. Notice that $g$ is real differentiable in all $\mathbb{R}^2$ while $h$ is differentiable $\mathbb{R}^2\setminus \{0\}$. By the Implicit Function Theorem, any level set of $h\circ g$ can be locally parametrized at any point $P\in \mathbb{R}^2$ such that $\nabla (h\circ g)|_P \neq 0$, which happens whenever $g(P)\neq 0$ and $D(g)|_P \neq 0$. Recalling that if $F_0(1,z)=g(z)$ is constant then $f$ is a polynomial, we can suppose that $g$ is a non-constant function so that $L$ can be parametrized locally as a curve everywhere except for \emph{finitely many points} at which $\frac{d}{dz}g(z)=0$.\\
+
+\item The set $G \coloneqq \{z\in \mathbb{C}\,:\, |g(z)|< e^{(d-1)(I_{\mu_f} + G^F(0,1))} \}$ is evidently open and $\partial G$ can be locally parametrized as a curve except for a finite set of points. We can think of $\partial G$ as composed by a collection of simple closed curves, which in case to have any intersection among them must occur at a critical point of $g$.\\
+
+\item The set $\partial G$ can be parametrized locally as an analytic curve at those points which are not critical points of $g$ (see Appendix \ref{analyticcurves} for the definition of analytic curves). To see this, take a point $w\in \partial G$ such that $\frac{d}{dz}g(z)|_w\neq 0$. Take a local inverse $g^{-1}$ of $g$ defined at a neighborhood of $w$. Define $c_0 \coloneqq e^{(d-1)(I_{\mu_f} + G^F(0,1))}$ and consider the parametrization $\theta \mapsto c_0 e^{i\theta}$ followed by $g^{-1}$. Up to normalization of this parametrization, we have obtained an analytical path which parametrizes $\partial G$ near $w$.
+\end{enumerate}
+
+Now we are ready to give the proof of Proposition \ref{pr:propobeginning2}. As before, let us restate it to provide a more detailed statement.\\
+
+\begin{myprop}{}{propox}
+If $F(f) = D_\infty$ then 
+\begin{enumerate}
+\item The Julia set $J(f)$ is contained in the level set 
+$$L\coloneqq \{z\in \mathbb{C}\,:\, |F_0(1,z)| = e^{(d-1)(I_{\mu_f} + G^F(0,1))}\}.$$
+\item If some component $l\subset L$ has non-empty intersection with $J(f)$ then $l\subset J(f)$ and $f^{k}(l) \subset L$ for all $k\geq 1$.
+\end{enumerate}
+\end{myprop}
+
+\begin{proof}
+We only have to prove the second part of the proposition. Assume there is some point $z_0\in l\cap J(f)$. Notice that $L$ has only finitely many components, actually at most $d_0=\deg F_0(1,z)$ which is the number of preimages of every point in the circumference $|z|=c_0$ under $F_0(1,z)$. Since such components are compact sets, there exists $\delta>0$ such that $\{|z-z_0|<\delta\}\cap J(f)\subset l$. Moreover, by perfectness of $J(f)$ the intersection $\{|z-z_0|<\delta\}\cap J(f)$ has infinitely many different points.\\
+
+Similarly, if $l_k$ is the connected component of $L$ which contains $f^k(z_0)$ for a fixed $k\geq 1$, there exists $\delta_k>0$ such that $\{|z-f^k(z_0)|<\delta_k\}\cap J(f)\subset l_k$. We can suppose that $\delta>0$ is small enough such that $f^k(\{|z-z_0|<\delta\}) \subset \{|z-f^k(z_0)|<\delta_k\}$, which implies that $f^k(\{|z-z_0|<\delta\}\cap J(f)\cap l) \subset l_k$. Then both curves $f^k(l)$ and $l_k$ intersect at infinitely many points near $z_0$, using the Identity Theorem for analytical paths (see Theorem \ref{th:identityanalyticpaths}) one can deduce that $f^k(l) \subset l_k\subset L$.\\
+
+Now let us show that $l\subset J(f)$. Suppose on the contrary that $l\cap F(f)\neq \emptyset$. Then $z_0\in l\cap D_\infty$, for $D_\infty=F(f)$. Since $p_\nu$ is a harmonic function on $F(f)$, the Maximum Principle  and Theorem \ref{th:frostman} implies that $p_\nu(z_0)>I_\nu$, hence $p_{\mu_f}(z_0)>I_{\mu_f}$, by equality of the measures. Now, if $z\in L$ then $z\not \in f^{-1}(\infty)$ for $|F_0(1,z)|=e^{(d-1)(I_{\mu_f} + G^F(0,1))}> 0$ and $f(z) =F_1(1,z)/F_0(1,z)$. By using Lemma \ref{lm:pre_lema3} and by substituting the value of $|F_0(1,z)|$ we get that for any $z\in L$
+$$p_{\mu_f}(f(z)) = dp_{\mu_f}(z)-(d-1)(I_{\mu_f}+G^F(0,1)) + (d-1)G^F(0,1) = d p_{\mu_f}(z)-(d-1)I_{\mu_f}.$$ 
+Hence
+$$p_{\mu_f}(f(z)) - I_{\mu_f} = d(p_{\mu_f}(z)-I_{\mu_f}).$$
+By iterating the previous equality we deduce that for any $k\geq 1$
+$$ p_{\mu_f}(f^k(z_0)) - I_{\mu_f} = d^k(p_{\mu_f}(z_0)-I_{\mu_f})>0,$$
+because $z_0\in L$. This implies that $\lim_{k \rightarrow \infty} p_{\mu_f}(f^k(z_0))=\infty$. But we know that $f^k(z_0)\in L$ for any $k$, so $\sup_{k\geq 0} p_{\mu_f}(f^k(z_0)) \leq \sup_{z\in L} p_{\mu_f}(f^k(z))<\infty$ since $p_{\mu_f}$ is upper semicontinuous and $L$ is compact, so we have reached a contradiction. We conclude that $l\subset J(f)$ must hold.
+\end{proof}
+
+\begin{myrmk}{}{}
+By Example \ref{ex:exracionales} it follows that the hypotheses of Theorem \ref{th:rationalispolyno} can not ben dropped, since $f(z) = z^n$ is a counter example for $n\leq -2$. However, in such case, $f^2 = f\circ f = z^{-2n}$ is a polynomial. In fact, Okuyama and Stawiska have also characterized functions presenting similar behaviour. Explicitly, they have shown that, if $f$ is a rational map of degree $d\geq 2$ for which $\infty\in F(f)$, then $f^2$ is a polynomial if and only if $\mu_f = \nu$, see \cite[Theorem 1]{okuyama2018}.
+\end{myrmk}

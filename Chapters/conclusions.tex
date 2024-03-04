@@ -1,0 +1,180 @@
+\section{A further analysis on Brolin's proof}\label{conclusion1}
+
+Let $f$ be a rational function on $\mathbb{P}^1$ of degree $d\geq 2$, and let $p_{\mu_n}$ be the logarithmic potentials with respect to $\mu_n=(f^n)_*\delta_a$, for a non-exceptional point $a\in \mathbb{P}^1$. We know that $\mu_n \overset{w^*}{\rightarrow} \mu_f$ and that $\text{supp}(\mu_f)=J(f)$. Let $\nu$ be an equilibrium measure for $J(f)$, and define $V\coloneqq I(\nu)$. Recall from Remark \ref{rm:conversetobrolin} that it is not necessary true that $\mu\neq \nu$. Suppose that in fact $\mu_f\neq \nu$, then a hypothesis in Lemma \ref{lm:lema_brolin} must not hold. We deduce that there is a $\zeta\in J(f)$ such that
+\begin{equation}\label{conditionboundary}
+\limsup_{n\rightarrow \infty} p_{\mu_n}(\zeta) > V.
+\end{equation}
+Suppose that $J(f)$ is non-polar so that $\nu$ is unique. Define $\mathcal{A}\coloneqq \{z\in J(f)\,:\, \limsup_{n\rightarrow \infty} p_{\mu_n}(z) > V\}$ and $\mathcal{B} \coloneqq \{z\in J(f)\,:\, p_{\mu_f}(z)> V\}$. By Proposition \ref{pr:weakconvergencep} it is readily seen that $\mathcal{A}\subset \mathcal{B}$. The set $J(f)\setminus \mathcal{B}$ is non-empty since otherwise $\mu_f$ would be the equilibrium measure for $J(f)$ by Proposition \ref{pr:almostequilibrium}. Moreover, if $\mu_f(\mathcal{B})=1$ then $I(\mu_f) = \int \, \mu_f \, d\mu_f(z) \geq \int V \, d\mu_f(z) = V$ which is a contradiction since $V> I(\mu_f)$. On the other hand, if $\zeta \in \mathcal{A}$ then $p_{\mu_f}(\zeta)>V$. So, by upper semicontinuity of $p_{\mu_f}$, there is an open set about $\zeta\in J(f)$ on which $p_{\mu_f}>V$. This open set has positive $\mu_f$-measure because $\zeta\in J(f)=\supp(\mu_f)$, so we deduce that $\mu_f(\mathcal{B})>0$.\\
+
+Let us recall a definition from potential theory in order to give more properties of $\mathcal{B}$.\\
+
+\begin{mydef}{}{}
+Let $S\subset \mathbb{C}$ be a subset and $\zeta \in S$. Then $S$ is {\bf non-thin} at $\zeta$ if $\zeta\in \overline{S\setminus \{\zeta\}}$ and if, for every subharmonic function $u$ defined on a neighborhood of $\zeta$,
+$$\limsup_{z\rightarrow \zeta, z\in S\setminus \{\zeta\}} u(z) = u(\zeta).$$
+Otherwise, we say that $S$ is {\bf thin} at $\zeta$.
+\end{mydef}
+
+\begin{mytheo}{}{teothin}
+A connected set containing more than one point is non-thin at every point of its closure.
+\end{mytheo}
+
+See \cite[Theorem 3.8.3]{ransford} for a proof of Theorem \ref{th:teothin}. We deduce that
+$$\limsup_{z\rightarrow \zeta ,\, z\in J(f)\setminus \{\zeta\}} p_{\mu_f}(z) = p_{\mu_f}(\zeta),$$
+if $\zeta\in J(f)$ belongs to a connected component of $J(f)$ with at least two points. Hence, we can state the following proposition.
+
+\begin{myprop}{}{pre-prop}
+If $J(f)$ does not contain singular sets as connected components, then $\mathcal{B}$ is a closed subset of $J(f)$ and does not have isolated points, therefore it is a perfect set.
+\end{myprop}
+
+In analogy, we may ask the following.\\
+\begin{myqstn}{}{}
+Is the set $\mathcal{A}$ also perfect? Is there any equivalent property or condition to Equation \eqref{conditionboundary} which may serve to detect points that belong to $\mathcal{A}$?
+\end{myqstn}
+
+\section{An explicit upper bound for $p_{\mu_f}$ on $J(f)$}
+
+Suppose that $f$ is a polynomial. When $\nu$ is the equilibrium measure of $J(f)$, Frostman's Theorem and the Extended Maximum Principle imply that $p_\nu$ is constant and equal to $I(\nu)$ on each bounded component of $\mathbb{C}\setminus J(f)$, that is on each bounded Fatou component. Hence, since $\mu_f=\nu$, we get that $p_{\mu_f}=I(\nu)$ nearly everywhere on $K(f)$.\\
+
+Now, suppose that $f$ is a rational map such that $f(D_\infty)\subset D_\infty$, where $D_\infty$ is the Fatou component which contains $\infty$. Denote by $B(f)$ the set of points of all Fatou components which are disjoint from $D_\infty$\nomenclature[35]{$B(f)$}{The set of points which belong to a bounded Fatou component} (if $f$ were a polynomial then $B(f)$ would be the interior of $K(f)$). By the same arguments as in the previous paragraph it is true that $p_\nu=I(\nu)$ on $B(f)$ and that $p_\nu \leq I(\nu)$ nearly everywhere on $J(f)$. Hence $p_\nu= I(\nu)$ nearly everywhere on $B(f)\cup J(f)$. However, if we suppose $\mu_f\neq \nu$, then from Section \ref{conclusion1} we know that there are points in $J(f)$ for which $I(\nu)< p_{\mu_f}$. Hence in this case, although by upper semicontinuity $p_{\mu_f}$ must be bounded on $J(f)$, the energy $I(\nu)$ is not such bound.\\
+
+We wish to find an upper bound for $p_{\mu_f}$ on $B(f)\cup J(f)$ when $\mu_f\neq \nu$. Our analysis make use of the hypothesis that $\infty\in F(f)$ and that $D_\infty$ is forward invariant. Thus, we can use all results from Section \ref{preleminary_lemmas}.\\
+
+Let $F(z,w)=(F_0(z,w),F_1(z,w))$ be a lift for $f$. Define $\lambda_{(1,z)}\coloneqq 1/F_0(1,z)^{1/d}$ then
+$$F(\lambda_{(1,z)}(1,z)) = \frac{1}{F_0(1,z)}F(1,z) = (1,f(z)),$$
+because $f(z) = F_1(1,z)/F_0(1,z).$\\
+
+Recall the identity from Lemma \ref{lm:pre_lema3}
+$$p_{\mu_f}(f(z))=dp_{\mu_f}(z)-\log|F_0(1,z)|+(d-1)G^F(0,1).$$
+Then, since $-\log|F_0(1,z)| = \log|\lambda_{(1,z)}|^d=d\log|\lambda_{(1,z)}|$ we deduce
+\begin{equation}\label{eccu01}
+p_{\mu_f}(f^n(z)) =dp_{\mu_f}(f^{n-1}(z))+d\log|\lambda_{(1,f^{n-1}(z))}| + (d-1)G^F(0,1).
+\end{equation}
+Now define $\lambda_n \coloneqq \lambda_{(1,f^{n-1}(z))}$. Iterating identity \eqref{eccu01} we get
+\begin{equation}\label{eccu02}
+p_{\mu_f}(f^n(z)) = d^np_{\mu_f}(z) + \sum_{j=0}^{n-1}d^{n-j}\log|\lambda_{j+1}| + (d-1)G^F(0,1)\sum_{j=0}^{n-1}d^j.
+\end{equation}
+Indeed, if we suppose that \eqref{eccu02} is valid for some $n>1$, using \eqref{eccu01} it follows
+\begin{align*}
+p_{\mu_f}(f^{n+1}(z)) &= d\,p_{\mu_f}(f^{n}(z))+d\log|\lambda_{n+1}| + (d-1)G^F(0,1)\\
+&= d\left(d^np_{\mu_f}(z) + \sum_{j=0}^{n-1}d^{n-j}\log|\lambda_{j+1}| + (d-1)G^F(0,1)\sum_{j=0}^{n-1}d^j\right)\\
+&+d\log|\lambda(1,f^{n}(z))| + (d-1)G^F(0,1)\\
+&= d^{n+1}p_{\mu_f}(z) + \sum_{j=0}^{n-1}d^{n+1-j}\log|\lambda_{j+1}|+d\log|\lambda(1,f^{n}(z))|\\
+&+ (d-1)G^F(0,1)+(d-1)G^F(0,1)\sum_{j=1}^{n}d^j\\
+&= d^{n+1}p_{\mu_f}(z) + \sum_{j=0}^{(n+1)-1}d^{n+1-j}\log|\lambda_{j+1}|+(d-1)G^F(0,1)\sum_{j=0}^{(n+1)-1}d^j.
+\end{align*}
+
+Now, by hypothesis $\infty\in F(f)$ so $J(f)$ is bounded in $\mathbb{C}$, hence compact. From the upper semicontinuity of the logarithmic potential, there exists a constant $0<M<+\infty$ such that $p_{\mu_f}(f^n(z)) \leq M$ for all $n\geq 0$ and $z\in J(f)$. Equation \eqref{eccu02} implies
+$$d^np_{\mu_f}(z) + \sum_{j=0}^{n-1}d^{n-j}\log|\lambda_{j+1}| + (d-1)G^F(0,1)\sum_{j=0}^{n-1}d^j\leq M,$$
+so
+\begin{equation}\label{eccu03}
+p_{\mu_f}(z) \leq M/d^n - \sum_{j=0}^{n-1}d^{-j}\log|\lambda_{j+1}| - (d-1)G^F(0,1)\sum_{j=0}^{n-1}d^{j-n}.
+\end{equation}
+
+On the other hand, recall that $|\lambda_j|^d = 1/|F_0(1,f^{j-1}(z))|$. Since $F_0$ is a polynomial, it reaches a maximum when restricted on compact sets. Let $0<C_{F_0}\coloneqq \sup_{z\in J(f)}|F_0(1,z)|$ then
+$$|F_0(1,f(z))|\leq C_{F_0} \quad \forall\, z\in J(f)\quad \Rightarrow \, 1/C_{F_0} \leq |\lambda_j|^d  \, \Rightarrow -d \log|\lambda_j| \leq \log C_{F_0} \quad \forall \, j\geq 1.$$
+Using this upper bound in Equation \eqref{eccu03} results in
+$$p_{\mu_f}(z) \leq M/d^n + \log C_{F_0}\sum_{j=1}^{n}d^{-j} - (d-1)G^F(0,1)\sum_{j=0}^{n-1}d^{j-n},$$
+taking the limit when $n\rightarrow \infty$ we obtain
+$$p_{\mu_f}(z) \leq \frac{\log C_{F_0}}{d-1} -\frac{(d-1)G^F(0,1)}{d-1} = \frac{\log C_{F_0}}{d-1} -G^F(0,1),$$
+\begin{equation}\label{equ04}
+p_{\mu_f}(z) \leq \frac{\log C_{F_0}}{d-1} -G^F(0,1) \quad \forall\,z\in J(f).
+\end{equation}
+
+Let us see that the upper bound in \eqref{equ04} does not depend on the lift $F$. Let $\tilde{F}=(\tilde{F}_0,\tilde{F}_1)$ another lift, by Theorem \ref{th:teolevantamiento} there is a constant $K\in \mathbb{C}^*$ such that $\tilde{F} = K F$. It follows easily that $C_{F_0}\cdot |K|$ is the least upper bound for $|\tilde{F}_0(1,z)|$ on $J(f)$. On the other hand, using the dynamical Green function property given in Equation \eqref{equgreen02},
+\begin{align*}
+\frac{\log (C_{F_0}\cdot |K|)}{d-1} -G^{KF}(0,1) &= \frac{\log C_{F_0}}{d-1} + \frac{\log|K|}{d-1} -G^F(0,1)- \frac{\log |K|}{d-1}\\ 
+&= \frac{\log C_{F_0}}{d-1}-G^F(0,1).
+\end{align*}
+
+Recall that by Lemma \ref{lm:pre_lema1} we have
+$$p_{\mu_f}(z) = G^F(1,z)-G^F(0,1) \quad \forall z\in \mathbb{C}.$$
+
+So an upper bound for $p_{\mu_f}$ on $J(f)$ would be simply $\max_{z\in J(f)} G^F(1,z)-G^F(0,1)$. Notice that the term $\max_{z\in J(f)} G^F(1,z)$ makes sense because $G^F(1,\cdot)$ is upper semicontinuous (it is actually continuous, see Theorem \ref{th:existence_green}). We deduce then
+
+\begin{equation}\label{relationconcl}
+\max_{z\in J(f)} G^F(1,z) \leq  \frac{\log C_{F_0}}{d-1}.
+\end{equation}
+
+For polynomial maps of degree $d\geq 2$ we can show that equality holds in Equation \eqref{relationconcl}. Actually, more than that happens.
+
+\begin{myprop}{}{maximo-C}
+If $f$ is a polynomial of degree $d\geq 2$ then
+$$ G^F(1,z) =  \frac{\log C_{F_0}}{d-1} \quad \text{ for } z\in J(f).$$
+In particular,
+$$p_{\mu_f}(z) = \frac{\log C_{F_0}}{d-1}-G^F(0,1) \quad \text{ for } z\in J(f).$$
+\end{myprop}
+\begin{proof}
+By the dynamical Green function property in \eqref{equgreen01} it is enough to show that both identities hold for the lift $F$ such that $F_0(1,z)=1$. In this case, $F_1(1,z)=f(z)$. Then $C_{F_0}=\max_{z\in J(f)}F_0(1,z)=1$ and $\log C_{F_0}=0$. On the other hand,
+$$F^k(1,z) = (1,f^k(z))\in 1\times J(f) \quad \forall\, k\geq 1.$$
+
+Since $1\times J(f)$ is a bounded subset of $\mathbb{C}^2$, we get
+$$G^F(1,z) = \lim_{k\rightarrow \infty} \frac{\log\|F^k(1,z)\|}{d^k}=0,$$
+for all $z\in J(f)$.\\
+
+Lemma \ref{lm:pre_lema1} readily implies that
+$$p_{\mu_f}(z) = \frac{\log C_{F_0}}{d-1}-G^F(0,1) \quad \text{ for } z\in J(f).$$
+\end{proof}
+
+The proof of Theorem \ref{th:theo_poly2} by Okuyama and Stawiska rests in the calculation of the energy $I_{\mu_f}$, see Section \ref{pruebadeokuyama}. For this, it was needed Lemma \ref{lm:pre_lema2} and, in the proof of it, the explicit value of $V_F$ from Equation \eqref{Vdemarco}. Here we give a proof of Theorem \ref{th:theo_poly2}, which may be considered more elemental in the sense that it does not need the calculation of the constant $V_F$.\\
+
+\begin{mycoro}{}{corox1}
+For a polynomial $f$ of degree $d\geq 2$ we have
+$$p_{\mu_f}(z) = I(\mu_f) = I(\nu) = \frac{\log C_{F_0}}{d-1}-G^F(0,1) \quad \forall \,z\in J(f).$$
+where $\nu$ is the equilibrium measure of $J(f)$. In particular, $\mu_f=\nu$ when $f$ is a polynomial. On the other hand, if $f$ is a rational map such that $D_\infty\subset F(f)$ is forward invariant and $\mu_f\neq \nu$, then
+$$I(\nu) < \frac{\log C_{F_0}}{d-1}-G^F(0,1).$$
+\end{mycoro}
+
+\begin{proof}
+If $f(z)=a_nz^n+\cdots+a_1z+a_0$, take the lift $F$ such that $F_0(1,z)=1$. By Proposition \ref{pr:maximo-C} we have $G^F(1,z)=0$ for all $z\in J(f)$, therefore $p_{\mu_f}(z) = -G^F(0,1)$ for $z\in J(f)$. Using equation \eqref{G-F} we know that $-G^F(0,1) = -\frac{\log|a_n|}{d-1}$. Then, Theorem \ref{th:capacitypolyno} implies that $p_{\mu_f}=I(\nu)$ on $J(f)$, so
+$$I(\mu_f) = \int_{J(f)}\,p_{\mu_f}\,d\mu_f = \int_{J(f)}\,I(\nu)\,d\mu_f=I(\nu),$$
+then $\mu_f=\nu$ by uniqueness of the equilibrium measure on non-polar sets.
+
+Finally, if $f$ is a rational map for which $\mu_f\neq \nu$, let $\zeta\in J(f)$ be a point which satisfies inequality \eqref{conditionboundary}, that is,
+$$\limsup_{n\rightarrow \infty} p_{\mu_n}(\zeta) > V=I(\nu).$$
+Then
+$$I(\nu)<p_{\mu_f}(\zeta) \leq \frac{\log C_{F_0}}{d-1}-G^F(0,1).$$
+
+\end{proof}
+
+\begin{myqstn}{}{}
+If $\mu_f\neq \nu$, is $\log C_{F_0}\frac{1}{d-1}-G^F(0,1)$ still the best upper bound for $p_{\mu_f}$ on $J(f)$? This is equivalent to ask if equality in Equation \eqref{relationconcl} holds for rational maps for which $\mu_f\neq \nu$.\\
+\end{myqstn}
+
+Now, by \cite[Theorem 4.2.4]{ransford} and Corollary \ref{cr:corox1} we can state the following.
+
+\begin{mycoro}{}{}
+If $f$ be a polynomial of degree $d\geq 2$, then $F(f)$ is a proper regular domain. Hence $J(f)$ is non-thin at every point of it.
+\end{mycoro}
+
+\begin{myqstn}{}{}
+For an arbitrary rational map $f$ of degree $d\geq 2$, is the Julia set $J(f)$ non-thin at every point of it?\\
+\end{myqstn}
+
+To end this section, we note that, when $f$ is a polynomial, by Lemma \ref{lm:pre_lema1} the dynamical Green function $G^F(1,z)$ is a harmonic function in $D_\infty$ which is constant on $J(f)$. We also know that if $F_0(1,z)=1$ then $G^F(1,z)=0$ for $z\in J(f)$. Moreover, $G^F(1,z)$ is continuous on $\mathbb{C}$ by uniform convergence of $G^F$ on compact subsets of $\mathbb{C}^2\setminus\{0 \}$. Hence, $G^F(1,z)$ satisfies conditions (a) and (c) of Definition \ref{df:green_potencial_def}. This strongly suggests that $G^F(1,z)$ coincides with the Green function $g(z,\infty)$ studied in Subsection \ref{subsectionn}. And indeed this is true, as we show next.\\
+
+\begin{myprop}{}{GreenesG}
+Let $f$ be a polynomial of degree $d\geq 2$. If $F$ is the lift for which $F_0(1,z)=1$ then 
+$$G^F(1,z) = g(z,\infty) \quad \forall z\in \mathbb{C}.$$ 
+\end{myprop}
+
+\begin{proof}
+Since $F_1(1,z) = f(z)$ then $F^k(1,z)=(1,f^k(z))$. Then, by definition, for all $z\in D_\infty$ we have
+$$G^F(1,z) = \lim_{n\rightarrow \infty} \frac{\log\| F^k(1,z)\|}{d^k} = \lim_{n\rightarrow \infty} \frac{\log  \sqrt{1+|f^k(z)|^2}}{d^k} = \lim_{n\rightarrow \infty}\frac{\log|f^k(z)|}{d^k},$$
+the assertion follows in this case by Corollary \ref{cr:corogreenf}.\\
+
+Now, $G^F(1,z)=0$ for $z\in \mathbb{C}\setminus D_\infty$, since $f^n(z)$ remains bounded for every $n\geq 1$. On the other hand $g(z,\infty)$ may be extended as $0$ for $z\in \mathbb{C}\setminus D_\infty$, concluding the proof.
+\end{proof}
+
+\begin{myrmk}{}{}
+Proposition \ref{pr:GreenesG} has been proven before, for example in \cite[Proposition 8.1]{hubbard}. However, our proof was motivated by the preceding paragraph.
+\end{myrmk}
+
+We arrive to a fourth proof of Theorem \ref{th:theo_poly2}.
+
+\begin{proof}[Another proof of Theorem \ref{th:theo_poly2}]
+Let $f$ be a polynomial of degree $d\geq 2$. By Lemma \ref{lm:pre_lema2}, $J(f)$ is non-polar. Hence by uniqueness of the dynamical Green function and its explicit construction in Theorem \ref{th:existencefuncgreen}, we deduce that if $F_0(1,z)=1$ then
+$$G^F(1,z) = p_\nu(z)-I(\nu),$$
+by Proposition \ref{pr:GreenesG}. Also, by Equation \eqref{G-F} and Theorem \ref{th:capacitypolyno}, $I(\nu)=G^F(0,1)$. And lastly, $G^F(1,z)=p_{\mu_f}(z)-G^F(0,1)$ so
+$$p_{\mu_f}(z) = p_\nu(z) \qquad \forall z\in \mathbb{C},$$
+the conclusion is then a very direct consequence of \cite[Theorem 3.4.7]{ransford} 
+\end{proof} 

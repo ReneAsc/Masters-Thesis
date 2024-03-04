@@ -1,0 +1,137 @@
+\section{Proof by Brolin}
+
+The proof by Brolin which shows that if $f$ is a polynomial then $\mu_f=\nu$, essentially rests in Lemma \ref{lm:lema_brolin}. This section is based on \cite{brolin1965invariant} as well as on theory from Section \ref{sectionmaximummeasure}.\\
+
+\begin{mylema}{}{lema_brolin}
+Let $E\subset H\subset \mathbb{C}$ be two closed sets such that $E$ is compact and non-polar. Suppose that a sequence $\{\mu_n\}_{n\geq 1}$ of probability measures on $H$ is weakly$^*$-convergent to $\mu$, where $\mu$ is a probability measure on $E$. Define $V\coloneqq I(\nu)$, where $\nu$ is the equilibrium measure for $E$. Let $p_{\mu_n}$ stand for the logarithmic potential with respect to $\mu_n$. Finally, suppose
+\begin{itemize}
+\item[(a)] $\limsup_{n\rightarrow \infty} p_{\mu_n}(z) \leq V$ for $z\in E$;\\
+\item[(b)] $\supp(\mu)=E$.
+\end{itemize}
+Then it is necessary that $\mu=\nu$.
+\end{mylema}
+
+\begin{proof}
+
+By upper semicontinuity for every $n\geq 1$ we have $\limsup_{z\rightarrow \zeta} p_{\mu_n}(z)\leq p_{\mu_n}(\zeta)$. Hence, given $\varepsilon>0$, for each $\zeta\in E$ there is a $\delta>0$ such that 
+$$p_{\mu_n}(z) \leq p_{\mu_n}(\zeta)+\varepsilon,$$
+for all $z\in E$ with $|z-\zeta|<\delta$. Now, by (a) we can find an integer $N_\zeta>0$ such that 
+$$p_{\mu_n}(z) \leq V + 2\varepsilon,$$
+for every $n\geq N_\zeta$ and $z\in E$ satisfying $|z-\zeta|<\delta$. Since $E$ is compact, there is an integer $N>0$ such that
+$$p_{\mu_n}(z) \leq V + 2\varepsilon \quad \forall z\in E, \, n\geq N.$$
+Since upper semicontinuous functions are bounded on compact subsets, taking into consideration the potentials $p_{\mu_n}$ for $n=1,\dots,N-1$, there is a constant $M>0$ such that
+$$p_{\mu_n}(z) \leq M \quad \forall z\in E, \, n\geq 1.$$
+Hence, we can apply Fatou's Lemma and use (a) to get
+$$-V \leq \int_E \liminf_{n\rightarrow \infty} - p_{\mu_n}\,d\nu \leq \liminf_{n\rightarrow \infty} \int_E -p_{\mu_n}\,d\nu,$$
+so we deduce that
+\begin{equation}\label{brolin01}
+\limsup_{n\rightarrow \infty} \int_E p_{\mu_n}(z)\,d\nu(z) \leq V.
+\end{equation}
+By Frostman's Theorem $p_\nu \geq V$ everywhere, so by Fubini's Theorem  
+\begin{equation}\label{brolin02}
+\limsup_{n\rightarrow \infty} \int_E p_{\mu_n}(z)\, d\nu(z) = \limsup_{n\rightarrow \infty} \int_H \int_E \log|w-z|\,d\nu(z) \,d\mu_n(w) \geq V.
+\end{equation}
+Assumption (a), and Equations \eqref{brolin01}, \eqref{brolin02} imply that $\limsup_{n\rightarrow \infty} p_n(z)=V$, except maybe for points in a set of null $\nu$-measure. We deduce also that if a Borel set $A\subset \mathbb{C}$ satisfies $\nu(A)>0$ then $A$ contains points where $\limsup_{n\rightarrow \infty} p_n(z)=V$. By Proposition \ref{pr:weakconvergencep} the weak convergence of $\mu_n$ to $\mu$ implies $p_\mu (z) \geq \limsup_{n\rightarrow \infty} p_{\mu_n}(z)$, where $p_\mu(z)$ is the logarithmic potential with respect to $\mu$. Then, for points in $\supp(\nu)=E$ it happens that $p_\mu(z)\geq V$, so $I(\mu)\geq V$. By uniqueness of the equilibrium measure on non-polar sets we conclude $\mu=\nu$.
+\end{proof}
+
+\begin{mytheo}{}{theo_poly2}
+If $f$ is a polynomial, then $\mu_{f}=\nu$.
+\end{mytheo}
+
+\begin{proof}
+Let $T$ be an automorphism of the plane. By the proof of Theorem \ref{th:teoinvcap} it is readily seen that if $\nu$ is the equilibrium measure of a compact set $K$, then the equilibrium measure of $T(K)$ is the push-forward measure $T_* \nu$. On the other hand let $a\in \C$, if $a_0$ is root of $f^{n}(z)-a$ then $T(a_0)$ is a root of $(T\circ f^n \circ T^{-1})(z) - T(a)$. Using this fact and the definition of $\mu_f$ it is easy to see that $\mu_{T\circ f \circ T^{-1}} = T_*\mu_f$. These observations along with Proposition \ref{pr:conjugation} imply that if the present theorem is true for $f$ then it is true for $T\circ f \circ T^{-1}$. Therefore we can assume that $f$ is monic and so that it can be written as $f(z) = z^d+a_{d-1}z^{d-1}+\cdots + a_0$. We will prove that the hypotheses of Lemma \ref{lm:lema_brolin} are satisfied for $\{\mu_n\}_{n\geq 1}$ defined as in \eqref{diracs}.\\
+
+ Set $E=H=J(f)$. If we take $a\in J(f)$, by complete invariance of the Julia set we have $\supp(\mu_n(a))\subset J(f)$ for all $n\geq 1$. Also, by Theorem \ref{th:theo_Lopes} $\mu_n(a) \overset{w^*}{\rightarrow} \mu_f$ and $\supp(\mu_f) =J(f)$. Hence, in order to apply Lemma \ref{lm:lema_brolin}, we only need to check that $\liminf_{n\rightarrow \infty} p_{\mu_n}(z) \geq V=I(\nu)$ for $z\in J(f)$, where $p_{\mu_n}$ is the logarithmic potential associated to $\mu_n(a)$.\\
+
+Since $J(f)$ is compact and forward invariant, there exists a constant $M>0$ such that 
+\begin{equation}\label{equbrolin02}
+|f^n(z)-a| \leq M, \quad \text{for }z\in J(f)\, \text{ and any } n\geq 1.
+\end{equation}
+Let $\{z_i^n(a)\}_{i=1}^{d^n}$ be the roots of the equation $f^n(z) = a$, then
+$$|f^n(z) - a| = \prod_{i=1}^{d^n} |z-z_i^n(a)|,$$
+by taking logarithms on both sides of the previous equation and using \eqref{equbrolin02} we get
+\begin{equation}\label{equbrolin03}
+\sum_{j=1}^{d^n} \log|z-z_i^n(a)| \leq \log(M).
+\end{equation}
+However, $p_{\mu_n}(z) = \int \log|z-w|\,d\mu_n(a)(w) = 1/d^n \sum_{i=1}^{d^n} \log|z-z_i^n(a)|$, so using \eqref{equbrolin03} we get
+$$\limsup_{n\rightarrow \infty} p_{\mu_n}(z) \leq \limsup_{n\rightarrow \infty} \log(M)/d^n = 0.$$
+But Theorem \ref{th:capacitypolyno} tells us that $e^V = e^{I(\nu)}=c(J(f)) = 1$ since $f$ is monic, whence $V=0$. It follows that condition (b) in Lemma \ref{lm:lema_brolin} is fulfilled. We conclude by the same lemma that $\mu_f = \nu$.
+\end{proof}
+
+\begin{mycoro}{}{corobrolin}
+The equilibrium measure of the unit circle $\mathbb{S}^1=\{|z|=1\}$ is the normalized arc length.
+\end{mycoro}
+
+\begin{proof}
+It is shown in Example \ref{ex:exracionales} that if $f(z)=z^2$ then $\mu_f$ is the normalized arc length. By Theorem \ref{th:theo_poly2} we deduce that $\nu=\mu_f$, where $\nu$ is the equilibrium measure of $\mathbb{S}^1$ and the result follows.
+\end{proof}
+
+\begin{myrmk}{}{conversetobrolin}
+Notice that the converse to Theorem \ref{th:theo_poly2} does not hold. That is, there are rational functions $f$ of degree $d\geq 2$ for which, if $\nu$ denotes the equilibrium measure of $J(f)$, we have $\mu_f=\nu$. This is the case of all maps $f(z)=z^n$ for $n\leq -2$, as can be deduced from Example \ref{ex:exracionales} and Corollary \ref{cr:corobrolin}.
+\end{myrmk}
+
+\section{Proof by Okuyama and Stawiska}\label{pruebadeokuyama}
+
+Here we develop the proof of Theorem \ref{th:theo_poly2} due to Okuyama and Stawiska \cite{okuyama}.\\
+
+\begin{mylema}{}{okulema1}
+Let $f$ be a polynomial of degree $d\geq 2$ and $F:\mathbb{C}^2 \rightarrow \mathbb{C}^2$ be a lift of $f$, then
+\begin{equation}\label{Resequ}
+\text{Res}\, F = a_F^{d}b_F^d,
+\end{equation}
+where $b_F$ is the non-zero coefficient of greatest degree of $F_1(1,z)$ and $a_F\coloneqq F_0(1,z)$ for any $z\in\mathbb{C}$.
+\end{mylema}
+
+\begin{proof}
+By direct calculation, we have (see Appendix \ref{appendixresultant})
+$$R(F_0(1,z),F_1(1,z)) = \begin{vmatrix}
+a_F & 0    & 0 &\cdots &0\\
+0   & a_F  & 0 &\cdots &0\\
+0   & 0    &a_F &\cdots &0\\
+\vdots   & \vdots  & \vdots &\cdots &\vdots\\
+0   & 0  & 0 &\cdots & a_F\\
+\end{vmatrix} = a_F^{d_1}.$$
+
+Therefore,
+
+\begin{equation}\label{Resequ}
+\text{Res}\, F = a_F^{d-d_1}b_F^{d-d_0}R(F_0(1,z),F_1(1,z)) = a_F^{d}b_F^d,
+\end{equation}
+\end{proof}
+
+
+\begin{mylema}{}{okulema2}
+With the same hypotheses as in Lemma \ref{lm:okulema1} we have
+\begin{equation}\label{G-F}
+G^F(0,1) = \frac{1}{d-1} \log|b_F|.
+\end{equation}
+\end{mylema}
+
+\begin{proof}
+Since $F_0$ is a homogeneous polynomial, the fact that $F_0(1,z)$ is constant implies $F_0(0,z)=0$, particularly $F_0(0,1)=0$. Similarly, $F_1(1,z)$ is a polynomial of degree $d_1=d$ (because $f=F_1(1,z)/F_0(1,z)$), hence it is necessary that $F_1(0,1)=b_F$. Using the previous facts, we get
+$$F(0,1) = (0,b_F) = b_F(0,1),$$
+$$F^2(0,1) = F(b_F(0,1))= b_F^d(b_F(0,1)) = b_F^{d+1}(0,1),$$
+inductively
+$$F^k(0,1) = b_F^{\sum_{j=0}^{k-1}d^j}(0,1),$$
+from which
+\begin{align*}
+G^F(0,1) &= \lim_{k \rightarrow \infty} \frac{1}{d^k} \log \|F^k(0,1)\|\\
+&= \lim_{k \rightarrow \infty} \frac{1}{d^k}(\sum_{j=0}^{k-1}d^j) \log|b_F|\\
+&= \frac{1/d}{1-1/d} \log|b_F|\\
+&= \frac{1}{d-1} \log|b_F|.
+\end{align*}
+\end{proof}
+
+We are now ready to give the desired proof.
+
+\begin{proof}[Proof of Theorem \ref{th:theo_poly2}] 
+
+From Lemma \ref{lm:pre_lema2} we know that
+$$e^{I_{\mu_f}} = e^{-2G^F(0,1)} \,|\text{Res}\, F|^{\frac{1}{d(d-1)}}.$$
+
+But from Lemmas \ref{lm:okulema1} and \ref{lm:okulema2} we now have the explicit values of $\text{Res}\,F$ and $G^F(0,1)$, so by substituting these values we get
+\begin{equation}\label{energia}
+e^{I_{\mu_f}} = \exp\left(-2\cdot \frac{1}{d-1} \log|b_F|\right) \cdot (|a_F b_F|^d)^{\frac{1}{d(d-1)}} = |a_F/b_F|^{\frac{1}{d-1}}.
+\end{equation}
+Comparing the previous equation with the formula in Theorem \ref{th:capacitypolyno} and recalling that $f(z)=F_1(1,z)/F_0(1,z)$, we deduce $I_{\mu_f}=I_\nu$. This implies $\mu_f=\nu$ by uniqueness of the equilibrium measure on non-polar sets.
+\end{proof}
